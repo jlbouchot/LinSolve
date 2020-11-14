@@ -8,6 +8,7 @@
 *.so
 *.pyc
 *.pyo
+*.exe 
 
 # Packages #
 ############
@@ -21,6 +22,7 @@
 *.rar
 *.tar
 *.zip
+*.depend 
 
 # Logs and databases #
 ######################
@@ -37,6 +39,7 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
+*.layout
 
 # Matlab unnecessary data #
 ###########################
