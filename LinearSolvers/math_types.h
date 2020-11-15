@@ -16,6 +16,10 @@ typedef struct CholeskyVector {
     Vector* matEntries;
 } CholeskyVector;
 
+// These are place holders for vectors representing upper triangular or lower triangular matrices
+typedef CholeskyVector upperTriangular;
+typedef CholeskyVector lowerTriangular;
+
 typedef struct Matrix {
     unsigned int nRows;
     unsigned int nCols;
