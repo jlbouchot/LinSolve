@@ -17,6 +17,12 @@ typedef struct CholeskyVector {
 } CholeskyVector;
 
 // These are place holders for vectors representing upper triangular or lower triangular matrices
+// They don't add any thing when compared to a CholeskyVector.
+// A warning though!
+// An upper triangular matrix has its values indexed column wise, not row wise, i.e.
+// element[0] = M(0,0)
+// element[1] = M(0,1) -> No surprise so far
+// element[2] = M(1,1) -> One could have expected M(0,2) here.
 typedef CholeskyVector upperTriangular;
 typedef CholeskyVector lowerTriangular;
 

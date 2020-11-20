@@ -4,9 +4,6 @@
 #include "math_types.h"
 #include <math.h> // Used for the square root
 
-Matrix* createZeroMtx(const unsigned int nbRows, const unsigned int nbCols);
-Vector* createZeroVector(const unsigned int nbElemts);
-
 /* Cholesky decomposition.
  * Computes the LU decomposition of a matrix.
  * @param[in] inMatrix An n x n matrix which we try to decompose.

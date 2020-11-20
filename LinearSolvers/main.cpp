@@ -3,6 +3,7 @@
 extern "C" {
     #include "solvers.h"
     #include "math_types.h"
+    #include "MatLib.h"
 }
 
 using namespace std;

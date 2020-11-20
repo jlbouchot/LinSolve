@@ -9,39 +9,7 @@ void LUdecomposition(Matrix* inMatrix, Matrix* outL, Matrix* outU){
     printf("I'm here!");
 }
 
-// Creates an nbRows x nbCols matrix
-// Returning a pointer to avoid copying memory around!
-Matrix* createZeroMtx(const unsigned int nbRows, const unsigned int nbCols) {
 
-    assert(nbRows > 0U);
-    assert(nbCols > 0U);
-
-    // Prepare the output variable
-    Matrix* outMtx;
-    outMtx = malloc(sizeof(Matrix));
-    outMtx->nRows = nbRows;
-    outMtx->nCols = nbCols;
-    outMtx->matElements = malloc(sizeof(elementType*)*nbRows);
-
-    // Now create the output entries!
-    for( unsigned int rowNb = 0U; rowNb < nbRows; ++rowNb ) {
-        outMtx->matElements[rowNb] = calloc(sizeof(elementType), nbCols);
-    }
-
-    return outMtx;
-}
-
-Vector* createZeroVector(const unsigned int nbElemts) {
-
-    assert(nbElemts > 0U);
-
-    Vector* outVector;
-    outVector = malloc(sizeof(Vector));
-    outVector->nbElements = nbElemts;
-    outVector->vecElements = calloc(sizeof(elementType), nbElemts);
-
-    return outVector;
-}
 
 
 CholeskyVector* CholeskyDecomposition(Matrix* inMatrix){ // Add a flag whether to do the multiplication or division
