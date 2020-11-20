@@ -27,6 +27,11 @@ int main()
 
     CholeskyVector* cholVec;
     cholVec = CholeskyDecomposition(aMatrix);
-    printf("%f, %f, %f", cholVec->matEntries->vecElements[0], cholVec->matEntries->vecElements[1], cholVec->matEntries->vecElements[2]);
+    printf("%f, %f, %f\n\n", cholVec->matEntries->vecElements[0], cholVec->matEntries->vecElements[1], cholVec->matEntries->vecElements[2]);
+
+    // Let's try the matrix multiplication thing
+    Matrix* squareOfA = matmult(aMatrix, aMatrix);
+    printf("\n\t Compute the square of the previous matrix \n %f, %f, %f, %f\n\n", squareOfA->matElements[0][0], squareOfA->matElements[0][1], squareOfA->matElements[1][0], squareOfA->matElements[1][1]); // This should be [5, 4, 4, 5]
+
     return 0;
 }
