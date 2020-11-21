@@ -19,7 +19,8 @@ void transpose_replace(Matrix* M); // Same as transpose, but replaces the input 
 void GramSchmidt_replace(Matrix* M);
 void GramSchmidt_replace(Matrix* M);
 void QR_full(Matrix* M, Matrix* Q, upperTriangular* R);
-
+upperTriangular* = transpose(lowerTriangular); // This is, if you think about it, pretty useless. It's just a copy of the memory content.
+Matrix* lowerTimesUpper(lowerTriangular* L, upperTriangular* U);
 
 
 #endif // MATLIB_H_INCLUDED
