@@ -75,3 +75,47 @@ Matrix* matmult(Matrix* A, Matrix* B) {
 
     return outMtx;
 }
+
+
+Matrix* transpose(Matrix* M){
+    Matrix* outMtx = createZeroMtx(M->nCols, M->nRows);
+
+    for(int rowIdx = 0; rowIdx < outMtx->nRows; rowIdx++){
+        for(int colIdx = 0; colIdx < outMtx->nCols; colIdx++){
+            outMtx->matElements[rowIdx][colIdx] = M->matElements[colIdx][rowIdx];
+        }
+    }
+
+    return outMtx;
+
+}
+
+// This is pretty much just for testing purposes and shouldn't be needed in practical applications, in theory
+Matrix* lowerTimesUpper(lowerTriangular* L, upperTriangular* U) {
+    const unsigned int nbRows = L->matDim; // This value...
+    const unsigned int nbCols = U->matDim; // And this one, are the same for now, as we don't consider lower and upper triangular matrices which aren't square
+    Matrix* outMtx = createZeroMtx(nbRows, nbCols);
+
+    for(int rowIdx = 0; rowIdx < nbRows; rowIdx++) {
+        for(int colIdx = 0; colIdx < nbCols; colIdx++) {
+            // Replace the following with a vector times vector product
+            elementType currentValue = 0; // Need to make sure that this is indeed a workable 0.
+            for(int runningIdx = 0; runningIdx <= rowIdx; runningIdx++) {
+                    currentValue += L->matEntries->vecElements[entryAt(nbRows, rowIdx, runningIdx, 0)]*U->matEntries->vecElements[entryAt(nbRows, runningIdx, colIdx, 1)];
+            }
+            outMtx->matElements[rowIdx][colIdx] = currentValue;
+        }
+    }
+
+    return outMtx;
+}
+
+int entryAt(const unsigned int matDim, const int rowIdx, const int colIdx, const unsigned char doUpper){
+    int outValue = 0;
+    if (doUpper == 0) {
+        outValue = rowIdx*(rowIdx+1)/2 + colIdx;
+    } else {
+        colIdx*(colIdx+1)/2 + rowIdx;
+    }
+    return outValue
+}
