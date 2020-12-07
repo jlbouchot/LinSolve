@@ -41,6 +41,22 @@ Vector* createZeroVector(const unsigned int nbElemts) {
     return outVector;
 }
 
+Vector* createOnesVector(const unsigned int nbElemts) {
+
+    assert(nbElemts > 0U);
+
+    Vector* outVector;
+    outVector = malloc(sizeof(Vector));
+    outVector->nbElements = nbElemts;
+    outVector->vecElements = calloc(sizeof(elementType), nbElemts);
+
+    for(uint32_t i = 0U; i < nbElemts; i++){
+        outVector->vecElements[i] = 1;
+    }
+
+    return outVector;
+}
+
 Matrix* matmult(Matrix* A, Matrix* B) {
     assert(A->nCols == B->nRows);
 
@@ -115,7 +131,7 @@ int entryAt(const unsigned int matDim, const int rowIdx, const int colIdx, const
     if (doUpper == 0) {
         outValue = rowIdx*(rowIdx+1)/2 + colIdx;
     } else {
-        colIdx*(colIdx+1)/2 + rowIdx;
+        outValue = colIdx*(colIdx+1)/2 + rowIdx;
     }
-    return outValue
+    return outValue;
 }

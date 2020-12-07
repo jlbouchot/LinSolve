@@ -24,7 +24,7 @@ CholeskyVector* CholeskyDecomposition(Matrix* inMatrix){ // Add a flag whether t
     const unsigned int matSize = inMatrix->nCols; // Show be the same as nRows, I leave it up to the user to be careful
 
     outVector->matDim = matSize;
-    outVector->matEntries = createZeroVector(0.5*matSize*(matSize+1));
+    outVector->matEntries = createZeroVector(matSize*(matSize+1)/2);
 
     // Finally start the Cholesky decomposition
     // We look over all rows

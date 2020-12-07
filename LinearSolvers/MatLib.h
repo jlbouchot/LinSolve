@@ -6,6 +6,7 @@
 // Basic inits
 Matrix* createZeroMtx(const unsigned int nbRows, const unsigned int nbCols);
 Vector* createZeroVector(const unsigned int nbElemts);
+Vector* createOnesVector(const unsigned int nbElemts);
 
 // Some basic matrix operations
 Matrix* matmult(Matrix* A, Matrix* B);
@@ -29,7 +30,7 @@ int entryAt(const unsigned int matDim, const int rowIdx, const int colIdx, const
 // Some basic linear algebra stuff
 void GramSchmidt_replace(Matrix* M);
 void QR_full(Matrix* M, Matrix* Q, upperTriangular* R);
-upperTriangular* = transpose(lowerTriangular); // This is, if you think about it, pretty useless. It's just a copy of the memory content.
+// upperTriangular* = transpose(lowerTriangular); // This is, if you think about it, pretty useless. It's just a copy of the memory content.
 
 
 #endif // MATLIB_H_INCLUDED
