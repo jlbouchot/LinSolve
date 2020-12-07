@@ -23,6 +23,8 @@ Soon to come
 
 Based on the ideas developed in [this paper](https://publications.ics.forth.gr/_publications/0201-P0401-lourakis-levenberg.pdf), I intend to compare the Dogleg optimisation with a Levenberg Marquardt optimization in bundle adjustment (which is used in 3D vision).
 Hence, the following topics will be included in the near future: 
+* Speed comparison for Cholesky decomposition (row-wise / col-wise and multiplication with inverse sqrt or division by sqrt?)
+* Speed comparison for creating vectors with memset vs for loop
 * Dog leg optimisation 
 * Basic gradient descent
 * Levenberg Marquardt (non linear) least squares
