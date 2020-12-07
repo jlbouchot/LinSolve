@@ -55,8 +55,6 @@ Thumbs.db
 
 # Path to big files # 
 #####################
-./BIT/2020August/WaveletAnalysis/Ressources/Books/
-./BIT/2020August/WaveletAnalysis/realtime/
 *.log
 *.aux
 *.bbl
